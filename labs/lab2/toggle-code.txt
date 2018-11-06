@@ -1,0 +1,20 @@
+//toggle every 10 ms  
+if ( millis() - LedTimerTen >= 10 ) {
+    if ( digitalRead(12) == HIGH ) {
+      digitalWrite( 12, LOW );
+    }//end if
+    else {
+      digitalWrite( 12, HIGH );
+    }//end else
+    LedTimerTen += 10;
+  }//end if
+
+
+
+//Pulsing the pin quickly every 20 milliseconds
+    digitalWrite( 12, HIGH);
+    digitalWrite( 12, LOW);
+
+//using port
+    PORTB &= ~0x10; //force bit 4, Pin 12, low
+    PORTB |= 0x10; //force bit 4, pin 12, high
